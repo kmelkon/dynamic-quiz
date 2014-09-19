@@ -1,0 +1,15 @@
+[
+
+    {
+        "question": "What color is the sea?",
+        "choices": ["Red", "Blue", "Green", "Transparent"],
+        "answer": 3
+
+    },
+    {
+        "question": "Entomology is the science that studies",
+        "choices": ["Behavior of human beings", "Insects", "The formation of rocks", "Gorillas"],
+        "answer": 1
+    }
+
+]

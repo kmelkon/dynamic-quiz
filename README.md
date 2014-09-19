@@ -1,2 +1,1 @@
-dynamic-quiz
-============
+## JavaScript Quiz
