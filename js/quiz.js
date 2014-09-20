@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", function() {
         divs[i].style.display = 'none';
     }
 
+            if ( CookieUtil.getItem('name') !== null ) {
+                console.log(CookieUtil.getItem('name'));
+
+                for (var i=0; i < divsLen; i++) {
+                    divs[i].style.display = '';
+                }
+
+                var logInContainer = document.querySelector('#log-in');
+
+                fadeOut(logInContainer);
+                logInContainer.style.display = 'none';
+            }
 
 
     Quiz.commonMethods.registerNext();
@@ -208,16 +220,16 @@ Quiz.commonMethods.getAllQuestions = function() {
             var divsLen = divs.length;
 
             if ( CookieUtil.getItem('name') !== null ) {
-                console.log(CookieUtil.getItem('name'));
-
-                for (var i=0; i < divsLen; i++) {
-                    divs[i].style.display = '';
-                }
-
-                var logInContainer = document.querySelector('#log-in');
-
-                fadeOut(logInContainer);
-                logInContainer.style.display = 'none';
+                // console.log(CookieUtil.getItem('name'));
+                //
+                // for (var i=0; i < divsLen; i++) {
+                //     divs[i].style.display = '';
+                // }
+                //
+                // var logInContainer = document.querySelector('#log-in');
+                //
+                // fadeOut(logInContainer);
+                // logInContainer.style.display = 'none';
 
                 Quiz.commonMethods.displayQA();
 
@@ -242,7 +254,7 @@ Quiz.commonMethods.getAllQuestions = function() {
                 Quiz.commonMethods.logIn();
 
             }
-        } //end of if 
+        } //end of cookit if 
     };
     xmlhttp.send(null);  
 };
