@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    Quiz.commonMethods.getAllQuestions();
     var divs = document.querySelectorAll('div:not(#log-in)');
     var divsLen = divs.length;
     for (var i=0; i < divsLen; i++) {
@@ -8,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    Quiz.commonMethods.getAllQuestions();
     Quiz.commonMethods.registerNext();
     Quiz.commonMethods.registerBack();
     Quiz.commonMethods.registerChoice();
@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// show a welcome box with a button to reset
-// else show login box
 
 var Quiz = {};
 
