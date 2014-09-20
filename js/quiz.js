@@ -233,7 +233,7 @@ Quiz.commonMethods.getAllQuestions = function() {
                 var loggedInContainer = document.querySelector('#logged-in');
                 var welcomeMsg = document.createElement('p');
                 loggedInContainer.appendChild(welcomeMsg);
-                welcomeMsg.innerHTML = 'Welcome back <b>' + CookieUtil.getItem('name') + '</b>!';
+                welcomeMsg.innerHTML = 'Welcome back <b><span class="text-capitalize">' + CookieUtil.getItem('name') + '</span></b>!';
                 var resetBtn = document.createElement('button');
                 resetBtn.type = 'submit';
                 resetBtn.innerHTML = 'Reset Username';

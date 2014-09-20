@@ -1,17 +1,31 @@
 body {
     /* background-image: url(http://subtlepatterns.com/patterns/geometry2.png); */
-   background-image: url(../images/subtle_dots_@2X.png); 
-  background-position: center center;
+   /* background-image: url(../images/congruent_pentagon.png);  */
+  /* background-position: center center; */
+    background-color: #b9f6ca !important; 
 }
 .container {
     padding-top: 50px;
 }
 
 h1.main-header {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
     /* border: 2px solid #ccc; */
     /* border-radius: 4px; */
+    background-color: #1de9b6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.inner-card-padding {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.logged-in-box {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .col-centered{
@@ -26,13 +40,34 @@ h1.main-header {
 }
 
 .log-in-btn {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .card-border {
     background: white;
-    padding: 20px;
-    border: 1px solid #e3e3e3;
+    /* padding: 20px; */
+    /* border: 1px solid #e3e3e3; */
     border-bottom: 5px solid #c7c7c7;
     border-radius: 4px;
+}
+
+input[type="radio"] {
+
+    visibility: hidden;
+}
+
+.quiz-wrapper label {
+    width: 100%;
+    display:inline-block;
+    /* background-color:#ddd; */
+    padding:4px 11px;
+}
+
+input[type="radio"]:checked + label {
+    background-color:#bbb;
+}
+
+.action-btns-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

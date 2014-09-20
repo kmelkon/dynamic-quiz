@@ -10,47 +10,47 @@
 <body>
     <div class="container"> 
 
-        <div class="card-border logged-in-box pull-right" id="logged-in">
+        <div class="card-border inner-card-padding logged-in-box pull-right" id="logged-in">
         </div>
 
         <div class="log-in-wrapper card-border col-centered">
-            <h1 class="main-header"> A Dynamic Quiz </h1>
+            <h1 class="main-header inner-card-padding "> A Dynamic Quiz </h1>
 
-            <div class="form-group" id="log-in">
+            <div class="form-group inner-card-padding" id="log-in">
                 <label for="exampleInputEmail1">Username</label>
                 <input type="text" placeholder="Enter Username here" id="user-name" class="form-control user-name-input" name="user-name"/>
-                <button type="submit" value="submit" class="btn btn-primary btn-lg log-in-btn" id="submit-user-name">Submit</button>
+                <button type="submit" value="submit" class="btn btn-primary btn-lg log-in-btn btn-block" id="submit-user-name">Submit</button>
             </div>
+
+
+            <div class="quiz-wrapper clearfix inner-card-padding">
+                <h2 class="">  </h2>
+
+                <div id="ans-0">
+                    <input type="radio" name="answer" value="" id="">
+                    <label for="">   </label>
+                </div>
+
+                <div id="ans-1">
+                    <input type="radio" name="answer" value="" id="">
+                    <label for=""> </label>
+                </div>
+
+                <div id="ans-2">
+                    <input type="radio" name="answer" value="" id="">
+                    <label for="">   </label>
+                </div>
+
+                <div id="ans-3">
+                    <input type="radio" name="answer" value="" id="">
+                    <label for=""> </label>
+                </div>
+                <div id="action-btns" class="action-btns-wrapper pull-right">
+                    <button id="prev-btn" class="btn btn-default"> Prev </button> 
+                    <button id="nxt-btn" class="btn btn-default"> Next </button> 
+                </div>
+            </div> <!--end of quiz wrapper --> 
         </div> <!-- end of login wrapper -->
-
-
-        <div class="quiz-wrapper">
-            <h2 class="">  </h2>
-
-            <div id="ans-0">
-                <input type="radio" name="answer" value="" id="">
-                <label for="">   </label>
-            </div>
-
-            <div id="ans-1">
-                <input type="radio" name="answer" value="" id="">
-                <label for=""> </label>
-            </div>
-
-            <div id="ans-2">
-                <input type="radio" name="answer" value="" id="">
-                <label for="">   </label>
-            </div>
-
-            <div id="ans-3">
-                <input type="radio" name="answer" value="" id="">
-                <label for=""> </label>
-            </div>
-            <div id="action-btns">
-                <button id="prev-btn"> Prev </button> 
-                <button id="nxt-btn"> Next </button> 
-            </div>
-        </div> <!--end of quiz wrapper --> 
     </div> <!--end of container -->
 
     <script src="quiz_data.json"></script>
