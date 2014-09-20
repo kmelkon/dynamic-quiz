@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
+    if ( CookieUtil.getItem('name') !== null ) {
+        var logInContainer = document.querySelector('#log-in');
+
+        fadeOut(logInContainer);
+        logInContainer.style.display = 'none';
+
+   }
 
     Quiz.commonMethods.registerNext();
     Quiz.commonMethods.registerBack();
@@ -200,8 +207,6 @@ Quiz.commonMethods.getAllQuestions = function() {
                 console.log(_this.allQuestions);
 
 
-
-                // Quiz.commonMethods.displayQA();
             }
 
             var divs = document.querySelectorAll('div:not(#log-in)');
