@@ -7,18 +7,20 @@ document.addEventListener("DOMContentLoaded", function() {
         divs[i].style.display = 'none';
     }
 
-            if ( CookieUtil.getItem('name') !== null ) {
-                console.log(CookieUtil.getItem('name'));
+    if ( CookieUtil.getItem('name') !== null ) {
+        console.log(CookieUtil.getItem('name'));
 
-                for (var i=0; i < divsLen; i++) {
-                    divs[i].style.display = '';
-                }
+        for (var i=0; i < divsLen; i++) {
+            divs[i].style.display = '';
+        }
 
-                var logInContainer = document.querySelector('#log-in');
+        var logInContainer = document.querySelector('#log-in');
 
-                fadeOut(logInContainer);
-                logInContainer.style.display = 'none';
-            }
+        fadeOut(logInContainer);
+        logInContainer.style.display = 'none';
+
+        Quiz.commonMethods.displayQA();
+    }
 
 
     Quiz.commonMethods.registerNext();
@@ -231,7 +233,7 @@ Quiz.commonMethods.getAllQuestions = function() {
                 // fadeOut(logInContainer);
                 // logInContainer.style.display = 'none';
 
-                Quiz.commonMethods.displayQA();
+                // Quiz.commonMethods.displayQA();
 
                 var loggedInContainer = document.querySelector('#logged-in');
                 var welcomeMsg = document.createElement('p');
