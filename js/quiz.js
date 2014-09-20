@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i=0; i < divsLen; i++) {
         divs[i].style.display = 'none';
     }
-   
 
-    
+
+
     Quiz.commonMethods.getAllQuestions();
     Quiz.commonMethods.registerNext();
     Quiz.commonMethods.registerBack();
@@ -34,7 +34,7 @@ Quiz.commonMethods = {
         var choices = document.querySelectorAll("input[name='answer']");
         var prev = document.getElementById("prev-btn");
 
-       // console.log(choices.length); 
+        // console.log(choices.length); 
         if (this.questionNumber === 0) {
             prev.style.display = "none";
         } else {
@@ -58,7 +58,7 @@ Quiz.commonMethods = {
             prev.parentNode.removeChild(prev);
         } else  {
 
-        // console.log(this.allQuestions[this.questionNumber].question);
+            // console.log(this.allQuestions[this.questionNumber].question);
             var h2 = document.querySelector("h2");
             h2.innerHTML = this.allQuestions[this.questionNumber].question;            
             fadeIn(h2);
@@ -102,7 +102,7 @@ Quiz.commonMethods = {
                     if (_this.score != 0) {
                         _this.score -= 1;
                     }
-                        
+
                     _this.questionNumber +=1;
                 }
                 // document.querySelector("h2").classList.add('hide');
@@ -126,16 +126,16 @@ Quiz.commonMethods = {
 
         for (i=0; i<inputLen; i++) {
             input[i].addEventListener('click', function() {
-        //         // alert(this.value);
-        //         if (_this.questionNumber === quesAns[0]) {
-        //             quesAns[_this.questionNumber] = this.value;
-        //         } else {
-        //             quesAns.push(_this.questionNumber, this.value);
-        //         }
-        //         _this.userAnswerArr.push( quesAns );
-        //
-        //         console.log(_this.userAnswerArr);
-        //         console.log(_this.questionNumber);
+                //         // alert(this.value);
+                //         if (_this.questionNumber === quesAns[0]) {
+                //             quesAns[_this.questionNumber] = this.value;
+                //         } else {
+                //             quesAns.push(_this.questionNumber, this.value);
+                //         }
+                //         _this.userAnswerArr.push( quesAns );
+                //
+                //         console.log(_this.userAnswerArr);
+                //         console.log(_this.questionNumber);
             });
         }
 
@@ -160,9 +160,9 @@ Quiz.commonMethods = {
             //     _this.questionNumber -= 1;
             //     _this.displayQA(); 
             // } else {
-                console.log("sameer back");
-                _this.questionNumber -=1;
-                _this.displayQA();
+            console.log("sameer back");
+            _this.questionNumber -=1;
+            _this.displayQA();
             // }
             if (checkedRadio != null) {
                 checkedRadio.checked = false;
@@ -176,11 +176,11 @@ Quiz.commonMethods = {
 
             // } else {
 
-                // alert("Please select an answer.");
+            // alert("Please select an answer.");
 
             // }
 
-        
+
         }, false);
     }
 
@@ -189,141 +189,148 @@ Quiz.commonMethods = {
 Quiz.commonMethods.getAllQuestions = function() {
     var xmlhttp = new XMLHttpRequest();
     var _this = this;
-// xmlhttp.overrideMimeType("application/json");
+    // xmlhttp.overrideMimeType("application/json");
     xmlhttp.open('GET', 'quiz_data.json', true);
     xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
-        var obj = JSON.parse(xmlhttp.responseText);
-        // console.log(obj[0].question);
-        var objLen = obj.length;
-        for (var i=0; i < objLen; i++) {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
+            var obj = JSON.parse(xmlhttp.responseText);
+            // console.log(obj[0].question);
+            var objLen = obj.length;
+            for (var i=0; i < objLen; i++) {
 
-            _this.allQuestions[i] = obj[i];
-            console.log(_this.allQuestions);
-    
+                _this.allQuestions[i] = obj[i];
+                console.log(_this.allQuestions);
 
 
-            // Quiz.commonMethods.displayQA();
-        }
 
-        var divs = document.querySelectorAll('div:not(#log-in)');
-        var divsLen = divs.length;
-
-        if ( CookieUtil.getItem('name') !== null ) {
-            console.log(CookieUtil.getItem('name'));
-
-            for (var i=0; i < divsLen; i++) {
-                divs[i].style.display = '';
+                // Quiz.commonMethods.displayQA();
             }
 
-            var logInContainer = document.querySelector('#log-in');
+            var divs = document.querySelectorAll('div:not(#log-in)');
+            var divsLen = divs.length;
 
-            fadeOut(logInContainer);
-            logInContainer.style.display = 'none';
+            if ( CookieUtil.getItem('name') !== null ) {
+                console.log(CookieUtil.getItem('name'));
 
-            Quiz.commonMethods.displayQA();
-            
-            var loggedInContainer = document.querySelector('#logged-in');
-            var welcomeMsg = document.createElement('p');
-            loggedInContainer.appendChild(welcomeMsg);
-            welcomeMsg.innerHTML = 'Welcome back ' + CookieUtil.getItem('name') + '!';
-            var resetBtn = document.createElement('button');
-            resetBtn.type = 'submit';
-            resetBtn.innerHTML = 'Reset';
-            resetBtn.id = 'resetUser';
-            loggedInContainer.appendChild(resetBtn);
+                for (var i=0; i < divsLen; i++) {
+                    divs[i].style.display = '';
+                }
 
-            resetBtn.addEventListener('click', function(){
-                CookieUtil.unset('name', null);
-                document.location.reload();
-            });
+                var logInContainer = document.querySelector('#log-in');
+
+                fadeOut(logInContainer);
+                logInContainer.style.display = 'none';
+
+                Quiz.commonMethods.displayQA();
+
+                var loggedInContainer = document.querySelector('#logged-in');
+                var welcomeMsg = document.createElement('p');
+                loggedInContainer.appendChild(welcomeMsg);
+                welcomeMsg.innerHTML = 'Welcome back ' + CookieUtil.getItem('name') + '!';
+                var resetBtn = document.createElement('button');
+                resetBtn.type = 'submit';
+                resetBtn.innerHTML = 'Reset';
+                resetBtn.id = 'resetUser';
+                loggedInContainer.appendChild(resetBtn);
+
+                resetBtn.addEventListener('click', function(){
+                    CookieUtil.unset('name', null);
+                    document.location.reload();
+                });
 
 
-        } else {
+            } else {
 
-            Quiz.commonMethods.logIn();
+                Quiz.commonMethods.logIn();
 
-        }
-    } //end of if 
+            }
+        } //end of if 
     };
     xmlhttp.send(null);  
 };
 
 Quiz.commonMethods.logIn = function() {
-    var divs = document.querySelectorAll('div:not(#log-in)');
-    var divsLen = divs.length;
-
     var logInBtn = document.querySelector("#submit-user-name");
-    logInBtn.addEventListener('click', function() {
+    var logInTextField = document.querySelector('#user-name');
 
-        var logInInput = document.querySelector('#user-name');
-        if ( logInInput.value !== '' ) {
-
-            // save to browsers local storage
-            localStorage.username = logInInput.value;
-            
-            // save a tasty cookie
-            CookieUtil.set('name', logInInput.value);
-            
-            // show the question and hide the log in box
-            for (var i=0; i < divsLen; i++) {
-                divs[i].style.display = '';
-            }
-            var logInContainer = document.querySelector('#log-in');
-
-            fadeOut(logInContainer);
-            logInContainer.style.display = 'none';
-
-            Quiz.commonMethods.displayQA();
-
-
-        } else {
-
-            alert('Please enter your name.');
-            // console.log(logInInput.value);
+    logInTextField.addEventListener('keydown', function(event){
+        if(event.keyCode === 13) {
+            LogInHandler();
         }
-
     }, false);
-
-    console.log(localStorage);
+    logInBtn.addEventListener('click', LogInHandler,  false);
 
 
 };
 
+// =========================== LogInHandler =====================
+function LogInHandler() {
+    var divs = document.querySelectorAll('div:not(#log-in)');
+    var divsLen = divs.length;
+
+
+    var logInInput = document.querySelector('#user-name');
+    if ( logInInput.value !== '' ) {
+
+        // save to browsers local storage
+        localStorage.username = logInInput.value;
+
+        // save a tasty cookie
+        CookieUtil.set('name', logInInput.value);
+
+        // show the question and hide the log in box
+        for (var i=0; i < divsLen; i++) {
+            divs[i].style.display = '';
+        }
+        var logInContainer = document.querySelector('#log-in');
+
+        fadeOut(logInContainer);
+        logInContainer.style.display = 'none';
+
+        Quiz.commonMethods.displayQA();
+
+
+    } else {
+
+        alert('Please enter your name.');
+        // console.log(logInInput.value);
+    }
+}
+
 // ============================ FadeIn ==========================
 function fadeIn(el) {
-  el.style.opacity = 0;
+    el.style.opacity = 0;
 
 
-  
-  var tick = function() {
-    el.style.opacity = +el.style.opacity + 0.02;
-   
 
-    if (+el.style.opacity < 1) {
-      (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
-    }
-  };
+    var tick = function() {
+        el.style.opacity = +el.style.opacity + 0.02;
 
-  tick();
+
+        if (+el.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+        }
+    };
+
+    tick();
 }
 
 // ============================ FadeOut ==========================
 function fadeOut(el) {
-  el.style.opacity = 1.0;
+    el.style.opacity = 1.0;
 
 
-  
-  var tick = function() {
-    el.style.opacity = +el.style.opacity - 0.02;
-   
 
-    if (+el.style.opacity > 0) {
-      (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
-    }
-  };
+    var tick = function() {
+        el.style.opacity = +el.style.opacity - 0.02;
 
-  tick();
+
+        if (+el.style.opacity > 0) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+        }
+    };
+
+    tick();
 }
 
 // ============================ CookieUtil ==========================
@@ -332,24 +339,24 @@ var CookieUtil = {
         if (!sKey) { return null; }
         return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
     },
-	set: function (name, value, expires, path, domain, secure) {
-		var cookieText = encodeURIComponent(name) + "=" +
-		encodeURIComponent(value);
-		if (expires instanceof Date) {
-			cookieText += "; expires=" + expires.toGMTString();
-		}
-		if (path) {
-			cookieText += "; path=" + path;
-		}
-		if (domain) {
-			cookieText += "; domain=" + domain;
-		}
-		if (secure) {
-			cookieText += "; secure";
-		}
-		document.cookie = cookieText;
-	},
-	unset: function (name, path, domain, secure){
-		this.set(name, "", new Date(0), path, domain, secure);
-	}
+    set: function (name, value, expires, path, domain, secure) {
+        var cookieText = encodeURIComponent(name) + "=" +
+            encodeURIComponent(value);
+        if (expires instanceof Date) {
+            cookieText += "; expires=" + expires.toGMTString();
+        }
+        if (path) {
+            cookieText += "; path=" + path;
+        }
+        if (domain) {
+            cookieText += "; domain=" + domain;
+        }
+        if (secure) {
+            cookieText += "; secure";
+        }
+        document.cookie = cookieText;
+    },
+    unset: function (name, path, domain, secure){
+        this.set(name, "", new Date(0), path, domain, secure);
+    }
 };
