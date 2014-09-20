@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
         divs[i].style.display = 'none';
     }
 
+    Quiz.commonMethods.registerNext();
+    Quiz.commonMethods.registerBack();
+    Quiz.commonMethods.registerChoice();
+
     if ( CookieUtil.getItem('name') !== null ) {
         console.log(CookieUtil.getItem('name'));
 
@@ -22,10 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         Quiz.commonMethods.displayQA();
     }
 
-
-    Quiz.commonMethods.registerNext();
-    Quiz.commonMethods.registerBack();
-    Quiz.commonMethods.registerChoice();
 
 
 
