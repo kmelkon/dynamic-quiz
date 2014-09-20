@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     Quiz.commonMethods.getAllQuestions();
-    var divs = document.querySelectorAll('div:not(#log-in)');
-    var divsLen = divs.length;
-    for (var i=0; i < divsLen; i++) {
-        divs[i].style.display = 'none';
-    }
+    // var divs = document.querySelectorAll('div.container div:not(#log-in)');
+    var quizDiv = document.querySelector('div.quiz-wrapper'); 
+    var welcomeDiv = document.querySelector('div#logged-in');
+    welcomeDiv.style.display = 'none';
+    quizDiv.style.display = 'none';
+    // var divsLen = divs.length;
+    // for (var i=0; i < divsLen; i++) {
+    //     divs[i].style.display = 'none';
+    // }
 
 
     if ( CookieUtil.getItem('name') !== null ) {
@@ -209,7 +213,7 @@ Quiz.commonMethods.getAllQuestions = function() {
 
             }
 
-            var divs = document.querySelectorAll('div:not(#log-in)');
+            var divs = document.querySelectorAll('div.container div:not(#log-in)');
             var divsLen = divs.length;
 
             if ( CookieUtil.getItem('name') !== null ) {
@@ -229,11 +233,12 @@ Quiz.commonMethods.getAllQuestions = function() {
                 var loggedInContainer = document.querySelector('#logged-in');
                 var welcomeMsg = document.createElement('p');
                 loggedInContainer.appendChild(welcomeMsg);
-                welcomeMsg.innerHTML = 'Welcome back ' + CookieUtil.getItem('name') + '!';
+                welcomeMsg.innerHTML = 'Welcome back <b>' + CookieUtil.getItem('name') + '</b>!';
                 var resetBtn = document.createElement('button');
                 resetBtn.type = 'submit';
-                resetBtn.innerHTML = 'Reset';
+                resetBtn.innerHTML = 'Reset Username';
                 resetBtn.id = 'resetUser';
+                resetBtn.classList.add('btn', 'btn-danger')
                 loggedInContainer.appendChild(resetBtn);
 
                 resetBtn.addEventListener('click', function(){
@@ -268,7 +273,7 @@ Quiz.commonMethods.logIn = function() {
 
 // =========================== LogInHandler =====================
 function LogInHandler() {
-    var divs = document.querySelectorAll('div:not(#log-in)');
+    var divs = document.querySelectorAll('div.container div:not(#log-in)');
     var divsLen = divs.length;
 
 
@@ -282,9 +287,12 @@ function LogInHandler() {
         CookieUtil.set('name', logInInput.value);
 
         // show the question and hide the log in box
-        for (var i=0; i < divsLen; i++) {
-            divs[i].style.display = '';
-        }
+        // for (var i=0; i < divsLen; i++) {
+        //     divs[i].style.display = '';
+        // }
+        var quizDiv = document.querySelector('div.quiz-wrapper'); 
+        quizDiv.style.display = '';
+ 
         var logInContainer = document.querySelector('#log-in');
 
         fadeOut(logInContainer);
