@@ -8,6 +8,7 @@ body {
     padding-top: 50px;
 }
 
+
 h1.main-header {
     /* padding-bottom: 50px; */
     /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
@@ -26,6 +27,7 @@ h1.main-header {
 .logged-in-box {
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 .col-centered{
@@ -71,3 +73,28 @@ input[type="radio"]:checked + label {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.action-btns-wrapper .nxt-btn i{
+    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    opacity: 0;
+    transform: translateX(-10px);
+}
+.action-btns-wrapper .nxt-btn:hover i {
+    margin-left: 20px;
+    opacity: 1.0;
+    transform: translateX(5px);
+}
+
+
+.action-btns-wrapper .prev-btn i{
+    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    opacity: 0;
+    transform: translateX(10px);
+}
+.action-btns-wrapper .prev-btn:hover i {
+    margin-right: 20px;
+    opacity: 1.0;
+    transform: translateX(-5px);
+}
+
+
