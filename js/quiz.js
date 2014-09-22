@@ -237,7 +237,7 @@ Quiz.commonMethods.getAllQuestions = function() {
                 resetBtn.type = 'submit';
                 resetBtn.innerHTML = 'Reset Username';
                 resetBtn.id = 'resetUser';
-                resetBtn.classList.add('btn', 'btn-danger')
+                resetBtn.classList.add('btn', 'btn-danger', 'btn-block')
                 loggedInContainer.appendChild(resetBtn);
                 fadeIn(resetBtn);
 
