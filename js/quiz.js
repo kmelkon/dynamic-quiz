@@ -43,14 +43,12 @@ Quiz.commonMethods = {
         var choices = document.querySelectorAll("input[name='answer']");
         var prev = document.getElementById("prev-btn");
 
-        // console.log(choices.length); 
         if (this.questionNumber === 0) {
             prev.style.display = "none";
         } else {
             prev.style.display = '';
         }
         console.log('[length', this.allQuestions.length);
-        // var h1 = document.querySelector("h1");
         if ( this.questionNumber === this.allQuestions.length) {
 
             var h2 = document.querySelector("h2");
@@ -234,12 +232,14 @@ Quiz.commonMethods.getAllQuestions = function() {
                 var welcomeMsg = document.createElement('p');
                 loggedInContainer.appendChild(welcomeMsg);
                 welcomeMsg.innerHTML = 'Welcome back <b><span class="text-capitalize">' + CookieUtil.getItem('name') + '</span></b>!';
+                fadeIn(welcomeMsg);
                 var resetBtn = document.createElement('button');
                 resetBtn.type = 'submit';
                 resetBtn.innerHTML = 'Reset Username';
                 resetBtn.id = 'resetUser';
                 resetBtn.classList.add('btn', 'btn-danger')
                 loggedInContainer.appendChild(resetBtn);
+                fadeIn(resetBtn);
 
                 resetBtn.addEventListener('click', function(){
                     CookieUtil.unset('name', null);
