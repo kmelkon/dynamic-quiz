@@ -91,7 +91,7 @@ input[type="radio"]:checked + label:after {
 }
 
 .action-btns-wrapper .nxt-btn i{
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     opacity: 0;
     transform: translateX(-20px);
 }
@@ -103,7 +103,7 @@ input[type="radio"]:checked + label:after {
 
 .action-btns-wrapper .nxt-btn {
     padding-right: 0px;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .action-btns-wrapper .nxt-btn:hover {
     padding-right: 12px;
@@ -111,14 +111,14 @@ input[type="radio"]:checked + label:after {
 
 .action-btns-wrapper .prev-btn {
     padding-left: 0px;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .action-btns-wrapper .prev-btn:hover {
     padding-left: 12px;
 }
 
 .action-btns-wrapper .prev-btn i{
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     opacity: 0;
     transform: translateX(20px);
 }
