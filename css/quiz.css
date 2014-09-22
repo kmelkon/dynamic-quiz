@@ -53,7 +53,7 @@ h1.main-header {
 }
 
 input[type="radio"] {
-
+    display: none;
     visibility: hidden;
 }
 
@@ -62,21 +62,32 @@ input[type="radio"] {
     display:inline-block;
     /* background-color:#ddd; */
     padding:4px 11px;
+    transition: all 0.6s ease-in-out; 
 }
 
+/* label:after { */
+/*     content: ""; */
+/*     position:absolute; */
+/*     bottom:0; top:0; left:0; */
+/*     width:0px; height:auto; */
+/*     z-index:-1; */
+/*     transition: width 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+/* } */
+
 input[type="radio"]:checked + label {
-    background-color:#bbb;
+    background-color: #12CA9C;
 }
 
 .action-btns-wrapper {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .action-btns-wrapper .nxt-btn i{
     transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
 }
 .action-btns-wrapper .nxt-btn:hover i {
     margin-left: 20px;
@@ -103,7 +114,7 @@ input[type="radio"]:checked + label {
 .action-btns-wrapper .prev-btn i{
     transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     opacity: 0;
-    transform: translateX(10px);
+    transform: translateX(20px);
 }
 .action-btns-wrapper .prev-btn:hover i {
     margin-right: 20px;
@@ -111,4 +122,14 @@ input[type="radio"]:checked + label {
     transform: translateX(-5px);
 }
 
+.quiz-wrapper h2 {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
 
+.quiz-wrapper div label {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
