@@ -48,7 +48,7 @@ Quiz.commonMethods = {
         } else {
             prev.style.display = '';
         }
-        console.log('[length', this.allQuestions.length);
+        // console.log('[length', this.allQuestions.length);
         if ( this.questionNumber === this.allQuestions.length) {
 
             var h2 = document.querySelector("h2");
@@ -79,7 +79,6 @@ Quiz.commonMethods = {
                 label.setAttribute("for", this.allQuestions[this.questionNumber].choices[i] );
                 label.innerHTML = this.allQuestions[this.questionNumber].choices[i];
                 fadeIn(inputContainer);
-                // fadeIn(label);
 
             }
         }
@@ -94,7 +93,6 @@ Quiz.commonMethods = {
             if (checkedRadio != null) {
                 var usersAnswer = checkedRadio.value;
                 //save answer value to userAnswerArr
-                // _this.userAnswerArr.push(usersAnswer); 
                 _this.userAnswerArr[_this.questionNumber] = usersAnswer; 
 
 
@@ -102,12 +100,12 @@ Quiz.commonMethods = {
                 console.log(_this.allQuestions[_this.questionNumber].answer, parseInt(usersAnswer));
                 if (_this.allQuestions[_this.questionNumber].answer == usersAnswer) {
                     console.log("correct");
-                    _this.score += 1;
+                        _this.score += 1;
                     _this.questionNumber += 1;
                 } else {
                     console.log("wrong");
                     if (_this.score != 0) {
-                        _this.score -= 1;
+                        // _this.score -= 1;
                     }
 
                     _this.questionNumber +=1;
@@ -155,6 +153,8 @@ Quiz.commonMethods = {
         // save only the answer in userAnswerArr and specify the number of choices later on to know how much will be the length of the loop when looking for the answer in userAnswerArr 
         prev.addEventListener("click", function() {
 
+            // decrement the score to remove previous answer
+            _this.score -= 1;
             var checkedRadio = document.querySelector('input[name="answer"]:checked');
             // if (checkedRadio != null) {
 
@@ -178,7 +178,7 @@ Quiz.commonMethods = {
             // _this.userAnswerArr[_this.questionNumber] = usersAnswer; 
             var prevAns = parseInt(_this.userAnswerArr[_this.questionNumber]) ;
             // console.log('sdsdsdsd',_this.userAnswerArr[_this.questionNumber]);
-            console.log('karam answer', prevAns);
+            // console.log('karam answer', prevAns);
             document.querySelector('input[value="'+ prevAns +'"]').checked = true;
 
             // } else {
@@ -215,7 +215,7 @@ Quiz.commonMethods.getAllQuestions = function() {
             var divsLen = divs.length;
 
             if ( CookieUtil.getItem('name') !== null ) {
-                console.log(CookieUtil.getItem('name'));
+                // console.log(CookieUtil.getItem('name'));
 
                 for (var i=0; i < divsLen; i++) {
                     divs[i].style.display = '';
