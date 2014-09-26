@@ -1,15 +1,55 @@
 [
 
     {
-        "question": "What color is the sea?",
-        "choices": ["Red", "Blue", "Green", "Transparent"],
-        "answer": 3
+        "question": "How many toes does a dog have? ",
+        "choices": ["10", "15", "18", "20"],
+        "answer": 2
 
     },
     {
-        "question": "Entomology is the science that studies",
-        "choices": ["Behavior of human beings", "Insects", "The formation of rocks", "Gorillas"],
+        "question": "What was the first country to win the World Cup twice?",
+        "choices": ["France", "Brazil", "Germany", "Italy"],
+        "answer": 3
+    },
+    {
+        "question": "Who painted the ceiling of the Sistine Chapel?",
+        "choices": ["Donatello", "Raphael", "Picaso", "Michelangelo"],
+        "answer": 3
+    }, 
+    {
+        "question": "How many dots are there in total on a pair of dice? ",
+        "choices": ["50", "42", "28", "36"],
         "answer": 1
+    },
+    {
+        "question": "Which is the correct translation of Zorro?",
+        "choices": ["Fox", "Sword", "The letter Z", "Black"],
+        "answer": 0
+    },
+    {
+        "question": "Which among the following is rich in Ozone?",
+        "choices": ["Stratosphere", "Mesosphere", "Ionosphere", "Troposphere"],
+        "answer": 0
+    },
+    {
+        "question": "Which among the following is also known as white gold?",
+        "choices": ["Nickel", "Rhodium", "Platinum", "Palladium"],
+        "answer": 2
+    },
+    {
+        "question": "What is the capital city of Australia?",
+        "choices": ["Sydney", "Canberra", "Melbourne", "Brisbane"],
+        "answer": 1
+    },
+    {
+        "question": "Which planet is nearest the sun?",
+        "choices": ["Neptune", "Mars", "Mercury", "Earth"],
+        "answer": 2
+    },
+    {
+        "question": "Who said 'I think therefore I am'?",
+        "choices": ["Rene Descartes", "Immanuel Kant", "John Locke", "Aristotle"],
+        "answer": 0
     }
 
 ]
