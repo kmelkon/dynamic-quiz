@@ -52,7 +52,7 @@ Quiz.commonMethods = {
         if ( this.questionNumber === this.allQuestions.length) {
 
             var h2 = document.querySelector("h2");
-            h2.innerHTML = "You finished the quiz, your score is " + this.score;
+            h2.innerHTML = "You finished the quiz, your score is " + this.score + "/10";
 
             fadeIn(h2);
             for (i=0; i < 4; i++) {
